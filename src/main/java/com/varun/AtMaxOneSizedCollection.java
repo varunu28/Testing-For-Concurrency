@@ -15,7 +15,7 @@ public class AtMaxOneSizedCollection<T> extends ArrayList<T> {
    * @param element Element that is intended to be added to the collection
    * @return boolean representing if the element was inserted to the collection successfully or not.
    */
-  public boolean addIfCollectionIsEmpty(T element) {
+  public synchronized boolean addIfCollectionIsEmpty(T element) {
     boolean isEmpty = super.isEmpty();
     if (isEmpty) {
       super.add(element);
